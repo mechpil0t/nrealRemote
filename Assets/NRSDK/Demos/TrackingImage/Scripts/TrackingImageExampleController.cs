@@ -9,6 +9,7 @@
 
 namespace NRKernal.NRExamples
 {
+    using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
 
@@ -33,11 +34,21 @@ namespace NRKernal.NRExamples
         GameObject _target;
 
         public GameObject _xyz;
+        public GameObject _remoteControl;
         xSmooth _so;
+
+        public bool _localizeOnce;
 
         void Start()
         {
           _so = _xyz.GetComponent<xSmooth>();
+          StartCoroutine(delayStart());
+        }
+
+        IEnumerator delayStart()
+        {
+          yield return new WaitForSeconds(3f);
+          _remoteControl.SetActive(true);
         }
 
         /// <summary> Updates this object. </summary>
@@ -73,6 +84,10 @@ namespace NRKernal.NRExamples
                       _target = visualizer.gameObject;
                       _xyz.SetActive(true);
                       _so.target = _target.transform;
+                      if(_localizeOnce == true)
+                      {
+                        DisableImageTracking();
+                      }
                     }
                 }
                 else if (image.GetTrackingState() == TrackingState.Stopped && visualizer != null)

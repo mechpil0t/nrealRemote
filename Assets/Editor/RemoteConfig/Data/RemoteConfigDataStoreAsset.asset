@@ -14,44 +14,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rsKeyList:
   - metadata:
-      entityId: e3aed38d-6fde-4c39-b3ee-851270fa3545
+      entityId: 9a2c4f10-a646-4e91-be16-50a301fd83b4
     rs:
       key: cubePosition
       type: float
-      value: 1
+      value: 4
   - metadata:
-      entityId: f45899d3-b5ac-4263-bf40-c8c56a034eb5
+      entityId: d11c73ee-fbd1-4504-b1b7-e6f135843143
     rs:
       key: cubeRotation
       type: float
-      value: 0
+      value: 180
   - metadata:
-      entityId: 8af92ec2-4f09-471f-8b1c-84ba2ba8cb25
+      entityId: ca25bca9-c303-45aa-9863-5bd090c24a45
     rs:
       key: lookat
       type: bool
-      value: False
+      value: true
   rsLastCachedKeyList:
   - metadata:
-      entityId: e3aed38d-6fde-4c39-b3ee-851270fa3545
+      entityId: 9a2c4f10-a646-4e91-be16-50a301fd83b4
     rs:
       key: cubePosition
       type: float
-      value: 1
+      value: 4.000000
   - metadata:
-      entityId: f45899d3-b5ac-4263-bf40-c8c56a034eb5
+      entityId: d11c73ee-fbd1-4504-b1b7-e6f135843143
     rs:
       key: cubeRotation
       type: float
-      value: 0
+      value: 180.000000
   - metadata:
-      entityId: 8af92ec2-4f09-471f-8b1c-84ba2ba8cb25
+      entityId: ca25bca9-c303-45aa-9863-5bd090c24a45
     rs:
       key: lookat
       type: bool
-      value: False
-  configId: ec1f2a0a-fac9-40cd-8624-078a8853ef8e
-  currentEnvironmentId: bd6bf907-54c3-4098-a067-decd41935162
+      value: true
+  configId: 7cf51ec2-136c-4d02-9f78-3ada05981e44
+  currentEnvironmentId: b036263f-43b4-4120-980f-d5177912a5f9
   environments:
   - id: b036263f-43b4-4120-980f-d5177912a5f9
     appId: 
