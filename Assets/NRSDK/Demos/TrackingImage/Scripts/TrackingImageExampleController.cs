@@ -1,10 +1,10 @@
 ﻿/****************************************************************************
 * Copyright 2019 Nreal Techonology Limited. All rights reserved.
-*                                                                                                                                                          
-* This file is part of NRSDK.                                                                                                          
-*                                                                                                                                                           
-* https://www.nreal.ai/        
-* 
+*
+* This file is part of NRSDK.
+*
+* https://www.nreal.ai/
+*
 *****************************************************************************/
 
 namespace NRKernal.NRExamples
@@ -16,6 +16,7 @@ namespace NRKernal.NRExamples
     [HelpURL("https://developer.nreal.ai/develop/unity/image-tracking")]
     public class TrackingImageExampleController : MonoBehaviour
     {
+
         /// <summary> A prefab for visualizing an TrackingImage. </summary>
         public TrackingImageVisualizer TrackingImageVisualizerPrefab;
 
@@ -28,6 +29,11 @@ namespace NRKernal.NRExamples
 
         /// <summary> The temporary tracking images. </summary>
         private List<NRTrackableImage> m_TempTrackingImages = new List<NRTrackableImage>();
+
+        GameObject _target;
+
+        public xSmooth _so;
+
 
         /// <summary> Updates this object. </summary>
         public void Update()
@@ -52,10 +58,16 @@ namespace NRKernal.NRExamples
                 {
                     NRDebugger.Info("Create new TrackingImageVisualizer!");
                     // Create an anchor to ensure that NRSDK keeps tracking this augmented image.
-                    visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
-                    visualizer.Image = image;
-                    visualizer.transform.parent = transform;
-                    m_Visualizers.Add(image.GetDataBaseIndex(), visualizer);
+                    if(_target == null)
+                    {
+                      visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
+                      visualizer.name = image.GetDataBaseIndex().ToString();
+                      visualizer.Image = image;
+                      visualizer.transform.parent = transform;
+                      m_Visualizers.Add(image.GetDataBaseIndex(), visualizer);
+                      _target = visualizer.gameObject;
+                      _so.target = _target.transform;
+                    }
                 }
                 else if (image.GetTrackingState() == TrackingState.Stopped && visualizer != null)
                 {

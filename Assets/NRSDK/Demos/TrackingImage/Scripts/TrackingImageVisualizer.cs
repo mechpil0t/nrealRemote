@@ -1,10 +1,10 @@
 ﻿/****************************************************************************
 * Copyright 2019 Nreal Techonology Limited. All rights reserved.
-*                                                                                                                                                          
-* This file is part of NRSDK.                                                                                                          
-*                                                                                                                                                           
-* https://www.nreal.ai/        
-* 
+*
+* This file is part of NRSDK.
+*
+* https://www.nreal.ai/
+*
 *****************************************************************************/
 
 namespace NRKernal.NRExamples
@@ -36,7 +36,11 @@ namespace NRKernal.NRExamples
         /// <summary> The axis. </summary>
         public GameObject Axis;
 
-        /// <summary> Updates this object. </summary>
+        void Start()
+        {
+
+        }
+
         public void Update()
         {
             if (Image == null || Image.GetTrackingState() != TrackingState.Tracking)

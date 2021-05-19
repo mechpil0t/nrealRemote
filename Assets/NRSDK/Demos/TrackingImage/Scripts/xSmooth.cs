@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class smoothOut : MonoBehaviour {
+public class xSmooth : MonoBehaviour {
 
 	public Transform target;
 
