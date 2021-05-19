@@ -32,8 +32,13 @@ namespace NRKernal.NRExamples
 
         GameObject _target;
 
-        public xSmooth _so;
+        public GameObject _xyz;
+        xSmooth _so;
 
+        void Start()
+        {
+          _so = _xyz.GetComponent<xSmooth>();
+        }
 
         /// <summary> Updates this object. </summary>
         public void Update()
@@ -66,6 +71,7 @@ namespace NRKernal.NRExamples
                       visualizer.transform.parent = transform;
                       m_Visualizers.Add(image.GetDataBaseIndex(), visualizer);
                       _target = visualizer.gameObject;
+                      _xyz.SetActive(true);
                       _so.target = _target.transform;
                     }
                 }

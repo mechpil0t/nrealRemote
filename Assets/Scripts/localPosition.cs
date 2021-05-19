@@ -15,6 +15,7 @@ public class localPosition : MonoBehaviour
     public Transform _cube;
 
     public bool _lookat;
+    public lookAt _look;
 
     void Awake()
     {
@@ -27,7 +28,7 @@ public class localPosition : MonoBehaviour
         _z = ConfigManager.appConfig.GetFloat("cubePosition");
         _y = ConfigManager.appConfig.GetFloat("cubeRotation");
         _lookat = ConfigManager.appConfig.GetBool("lookat");
-
+        _look._active = _lookat;
         _cube.localPosition = new Vector3(0,0,_z);
         _cube.localEulerAngles = new Vector3(0,_y,0);
     }
